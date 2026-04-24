@@ -1,0 +1,23 @@
+{
+  "name": "@meshkit/trace-ui",
+  "version": "0.1.0",
+  "description": "Trace visualization UI for meshkit",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["meshkit", "tracing", "observability"],
+  "author": "Zeeshan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

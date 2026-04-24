@@ -1,0 +1,48 @@
+{
+  "name": "meshkit",
+  "version": "0.1.0",
+  "description": "Multi-agent mesh SDK - define agents, wire topologies, trace everything",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["agents", "multi-agent", "mcp", "mesh", "orchestration"],
+  "author": "Zeeshan",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "openai": "^4.77.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "peerDependencies": {
+    "@meshkit/mcp": "workspace:*",
+    "@meshkit/providers": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@meshkit/mcp": { "optional": true },
+    "@meshkit/providers": { "optional": true }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

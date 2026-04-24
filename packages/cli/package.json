@@ -1,0 +1,33 @@
+{
+  "name": "@meshkit/cli",
+  "version": "0.1.0",
+  "description": "CLI for meshkit - create and manage agent meshes",
+  "type": "module",
+  "bin": {
+    "meshkit": "./dist/index.js",
+    "create-mesh-app": "./dist/create.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/*.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["meshkit", "cli", "agents"],
+  "author": "Zeeshan",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

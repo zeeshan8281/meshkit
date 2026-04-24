@@ -1,0 +1,21 @@
+{
+  "name": "meshkit-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Express.js of agent meshes",
+  "scripts": {
+    "dev": "pnpm --filter meshkit dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "clean": "pnpm -r clean && rm -rf node_modules"
+  },
+  "keywords": ["agents", "multi-agent", "mcp", "orchestration", "ai"],
+  "author": "Zeeshan",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=20"
+  }
+}

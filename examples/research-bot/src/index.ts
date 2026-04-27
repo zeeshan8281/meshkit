@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { createMesh, hubAndSpoke, createOrchestratorAgent, trace } from 'meshkit';
 import { researcher } from './agents/researcher.js';
 import { writer } from './agents/writer.js';
@@ -5,7 +6,8 @@ import { critic } from './agents/critic.js';
 
 trace.enable({ exportFormat: 'console' });
 
-const orchestrator = createOrchestratorAgent('claude-sonnet-4-6');
+const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
+const orchestrator = createOrchestratorAgent(model);
 
 const mesh = createMesh({
   topology: hubAndSpoke({ orchestrator, maxRounds: 3 }),

@@ -2,6 +2,7 @@ import type { Agent, Topology, MeshResult, MeshStep, TokenUsage } from './types.
 import type { HubAndSpokeOptions } from './types.js';
 import { trace } from './trace.js';
 import { randomUUID } from 'node:crypto';
+import { defineAgent } from './agent.js';
 
 const DEFAULT_ORCHESTRATOR_PROMPT = `You are an orchestrator agent that coordinates a team of specialized agents to solve tasks.
 
@@ -166,7 +167,6 @@ export function createOrchestratorAgent(
   model: string = 'claude-sonnet-4-6',
   customPrompt?: string
 ): Agent {
-  const { defineAgent } = require('./agent.js');
   return defineAgent({
     name: 'orchestrator',
     model,

@@ -1,8 +1,10 @@
 import { defineAgent } from 'meshkit';
 
+const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
+
 export const writer = defineAgent({
   name: 'writer',
-  model: 'claude-sonnet-4-6',
+  model,
   systemPrompt: `You are a writing agent. Your job is to take research findings and compose clear, engaging content.
 
 When given research to write about:

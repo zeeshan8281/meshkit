@@ -1,8 +1,10 @@
 import { defineAgent } from 'meshkit';
 
+const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
+
 export const researcher = defineAgent({
   name: 'researcher',
-  model: 'claude-sonnet-4-6',
+  model,
   systemPrompt: `You are a research agent. Your job is to find accurate, relevant information on any topic.
 
 When given a research task:

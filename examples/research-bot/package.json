@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "meshkit": "workspace:*",
-    "@meshkit/mcp": "workspace:*"
+    "@meshkit/mcp": "workspace:*",
+    "dotenv": "^16.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

@@ -25,10 +25,12 @@ interface Provider {
 
 let anthropicClient: Anthropic | null = null;
 let openaiClient: OpenAI | null = null;
+let openrouterClient: OpenAI | null = null;
 
 const providerConfig: {
   anthropic?: { apiKey?: string };
   openai?: { apiKey?: string };
+  openrouter?: { apiKey?: string };
 } = {};
 
 export const provider = {
@@ -42,6 +44,17 @@ export const provider = {
     providerConfig.openai = config;
     openaiClient = new OpenAI({
       apiKey: config.apiKey || process.env.OPENAI_API_KEY
+    });
+  },
+  openrouter(config: { apiKey?: string }) {
+    providerConfig.openrouter = config;
+    openrouterClient = new OpenAI({
+      apiKey: config.apiKey || process.env.OPENROUTER_API_KEY,
+      baseURL: 'https://openrouter.ai/api/v1',
+      defaultHeaders: {
+        'HTTP-Referer': 'https://github.com/zeeshan8281/meshkit',
+        'X-Title': 'meshkit',
+      },
     });
   },
   custom(config: { endpoint: string; format: 'anthropic' | 'openai' }) {
@@ -59,6 +72,10 @@ function isAnthropicModel(model: ModelId): boolean {
 
 function isOpenAIModel(model: ModelId): boolean {
   return model.startsWith('gpt') || model.startsWith('o1') || model.startsWith('o3');
+}
+
+function isOpenRouterModel(model: ModelId): boolean {
+  return model.includes('/');
 }
 
 function getAnthropicProvider(): Provider {
@@ -153,18 +170,79 @@ function getOpenAIProvider(): Provider {
   };
 }
 
+function getOpenRouterProvider(): Provider {
+  if (!openrouterClient) {
+    openrouterClient = new OpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseURL: 'https://openrouter.ai/api/v1',
+      defaultHeaders: {
+        'HTTP-Referer': 'https://github.com/zeeshan8281/meshkit',
+        'X-Title': 'meshkit',
+      },
+    });
+  }
+
+  return {
+    async chat(request: ChatRequest): Promise<ChatResponse> {
+      const tools = request.tools?.map(t => ({
+        type: 'function' as const,
+        function: {
+          name: t.name,
+          description: t.description,
+          parameters: zodToJsonSchema(t.parameters),
+        },
+      }));
+
+      const response = await openrouterClient!.chat.completions.create({
+        model: request.model,
+        max_tokens: request.maxTokens ?? 4096,
+        temperature: request.temperature,
+        messages: [
+          { role: 'system', content: request.systemPrompt },
+          ...request.messages,
+        ],
+        ...(tools && tools.length > 0 ? { tools } : {}),
+      });
+
+      const choice = response.choices[0];
+      const toolCalls = choice.message.tool_calls?.map(tc => ({
+        name: tc.function.name,
+        input: JSON.parse(tc.function.arguments),
+      }));
+
+      return {
+        content: choice.message.content ?? '',
+        toolCalls,
+        usage: response.usage ? {
+          inputTokens: response.usage.prompt_tokens,
+          outputTokens: response.usage.completion_tokens,
+        } : undefined,
+      };
+    },
+  };
+}
+
 export function getProvider(model: ModelId): Provider {
+  if (isOpenRouterModel(model)) {
+    return getOpenRouterProvider();
+  }
   if (isAnthropicModel(model)) {
     return getAnthropicProvider();
   }
   if (isOpenAIModel(model)) {
     return getOpenAIProvider();
   }
+  if (openrouterClient) {
+    return getOpenRouterProvider();
+  }
   if (anthropicClient) {
     return getAnthropicProvider();
   }
   if (openaiClient) {
     return getOpenAIProvider();
+  }
+  if (process.env.OPENROUTER_API_KEY) {
+    return getOpenRouterProvider();
   }
   throw new Error(`No provider configured for model: ${model}`);
 }

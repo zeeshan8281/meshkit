@@ -1,8 +1,10 @@
 import { defineAgent } from 'meshkit';
 
+const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
+
 export const critic = defineAgent({
   name: 'critic',
-  model: 'claude-sonnet-4-6',
+  model,
   systemPrompt: `You are a critic agent. Your job is to review content for accuracy, clarity, and completeness.
 
 When reviewing content:

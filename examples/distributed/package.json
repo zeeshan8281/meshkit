@@ -1,0 +1,24 @@
+{
+  "name": "distributed-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "registry": "tsx ../../packages/registry/src/server.ts",
+    "coder": "tsx agent-coder/index.ts",
+    "reviewer": "tsx agent-reviewer/index.ts",
+    "runner": "tsx agent-runner/index.ts",
+    "demo": "echo 'Run in separate terminals:\\n  pnpm registry\\n  pnpm coder\\n  pnpm reviewer\\n  pnpm runner \"your task\"'"
+  },
+  "dependencies": {
+    "meshkit": "workspace:*",
+    "@meshkit/registry": "workspace:*",
+    "@meshkit/transport": "workspace:*",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

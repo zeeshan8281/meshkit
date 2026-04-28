@@ -11,7 +11,8 @@
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "lint": "eslint .",
-    "clean": "pnpm -r clean && rm -rf node_modules"
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "publish:all": "pnpm build && pnpm -r publish --access public --no-git-checks"
   },
   "keywords": [
     "agents",

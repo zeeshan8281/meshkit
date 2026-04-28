@@ -24,7 +24,12 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
-  "keywords": ["meshkit", "providers", "anthropic", "openai"],
+  "keywords": [
+    "meshkit",
+    "providers",
+    "anthropic",
+    "openai"
+  ],
   "author": "Zeeshan",
   "license": "MIT",
   "dependencies": {
@@ -37,5 +42,12 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeeshan8281/meshkit.git"
   }
 }

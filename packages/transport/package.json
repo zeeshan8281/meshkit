@@ -12,10 +12,17 @@
   "dependencies": {
     "hono": "^4.6.0",
     "@hono/node-server": "^1.13.0",
-    "@meshkit/registry": "workspace:*"
+    "@meshkit/registry": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
     "typescript": "^5.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeeshan8281/meshkit.git"
   }
 }

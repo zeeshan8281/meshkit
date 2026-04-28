@@ -13,7 +13,11 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
-  "keywords": ["meshkit", "cli", "agents"],
+  "keywords": [
+    "meshkit",
+    "cli",
+    "agents"
+  ],
   "author": "Zeeshan",
   "license": "MIT",
   "dependencies": {
@@ -29,5 +33,12 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeeshan8281/meshkit.git"
   }
 }

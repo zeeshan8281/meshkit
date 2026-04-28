@@ -20,7 +20,13 @@
     "test:watch": "vitest",
     "clean": "rm -rf dist"
   },
-  "keywords": ["agents", "multi-agent", "mcp", "mesh", "orchestration"],
+  "keywords": [
+    "agents",
+    "multi-agent",
+    "mcp",
+    "mesh",
+    "orchestration"
+  ],
   "author": "Zeeshan",
   "license": "MIT",
   "dependencies": {
@@ -35,14 +41,22 @@
     "vitest": "^2.1.0"
   },
   "peerDependencies": {
-    "@meshkit/mcp": "workspace:*",
-    "@meshkit/providers": "workspace:*"
+    "@meshkit/mcp": "^0.1.0",
+    "@meshkit/providers": "^0.1.0"
   },
   "peerDependenciesMeta": {
-    "@meshkit/mcp": { "optional": true },
-    "@meshkit/providers": { "optional": true }
+    "@meshkit/mcp": {
+      "optional": true
+    },
+    "@meshkit/providers": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeeshan8281/meshkit.git"
   }
 }

@@ -10,7 +10,11 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
-  "keywords": ["meshkit", "tracing", "observability"],
+  "keywords": [
+    "meshkit",
+    "tracing",
+    "observability"
+  ],
   "author": "Zeeshan",
   "license": "MIT",
   "devDependencies": {
@@ -19,5 +23,12 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeeshan8281/meshkit.git"
   }
 }

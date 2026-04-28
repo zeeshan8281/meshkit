@@ -1,6 +1,6 @@
 {
   "name": "@zeeshan8281/meshkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Multi-agent mesh SDK - define agents, wire topologies, trace everything",
   "type": "module",
   "main": "./dist/index.js",

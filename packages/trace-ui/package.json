@@ -1,6 +1,6 @@
 {
   "name": "@zeeshan8281/trace-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Trace visualization UI for meshkit",
   "type": "module",
   "main": "./dist/index.js",

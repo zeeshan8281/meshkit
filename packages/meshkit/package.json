@@ -1,6 +1,6 @@
 {
   "name": "@zeeshan8281/meshkit",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Multi-agent mesh SDK - define agents, wire topologies, trace everything",
   "type": "module",
   "main": "./dist/index.js",
@@ -10,6 +10,18 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./registry": {
+      "types": "./node_modules/@zeeshan8281/registry/dist/index.d.ts",
+      "import": "@zeeshan8281/registry"
+    },
+    "./transport": {
+      "types": "./node_modules/@zeeshan8281/transport/dist/index.d.ts",
+      "import": "@zeeshan8281/transport"
+    },
+    "./mcp": {
+      "types": "./node_modules/@zeeshan8281/mcp/dist/index.d.ts",
+      "import": "@zeeshan8281/mcp"
     }
   },
   "scripts": {
@@ -31,6 +43,9 @@
   "license": "MIT",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
+    "@zeeshan8281/registry": "^0.1.0",
+    "@zeeshan8281/transport": "^0.1.0",
+    "@zeeshan8281/mcp": "^0.1.0",
     "openai": "^4.77.0",
     "zod": "^3.24.0"
   },
@@ -40,19 +55,7 @@
     "typescript": "^5.7.0",
     "vitest": "^2.1.0"
   },
-  "peerDependencies": {
-    "@zeeshan8281/mcp": "^0.1.0",
-    "@zeeshan8281/providers": "^0.1.0"
-  },
-  "peerDependenciesMeta": {
-    "@zeeshan8281/mcp": {
-      "optional": true
-    },
-    "@zeeshan8281/providers": {
-      "optional": true
-    }
-  },
-  "engines": {
+    "engines": {
     "node": ">=20"
   },
   "repository": {

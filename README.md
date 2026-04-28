@@ -33,18 +33,10 @@ meshkit gives you:
 ## Installation
 
 ```bash
-npm install @zeeshan8281/meshkit @zeeshan8281/registry @zeeshan8281/transport
+npm install @zeeshan8281/meshkit
 ```
 
-Or individual packages:
-
-```bash
-npm install @zeeshan8281/meshkit        # Core SDK
-npm install @zeeshan8281/registry       # Agent registry server
-npm install @zeeshan8281/transport      # HTTP transport for distributed agents
-npm install @zeeshan8281/mcp            # MCP tool integration
-npm install @zeeshan8281/providers      # LLM provider adapters
-```
+That's it. One package. Everything included.
 
 ---
 
@@ -106,8 +98,7 @@ startRegistry({ port: 4200 });
 
 ```ts
 // coder-agent.ts
-import { defineAgent } from '@zeeshan8281/meshkit';
-import { serveAgent } from '@zeeshan8281/transport';
+import { defineAgent, serveAgent } from '@zeeshan8281/meshkit';
 
 const coder = defineAgent({
   name: 'coder',
@@ -133,8 +124,7 @@ serveAgent({
 
 ```ts
 // reviewer-agent.ts
-import { defineAgent } from '@zeeshan8281/meshkit';
-import { serveAgent } from '@zeeshan8281/transport';
+import { defineAgent, serveAgent } from '@zeeshan8281/meshkit';
 
 const reviewer = defineAgent({
   name: 'reviewer',
@@ -153,8 +143,7 @@ serveAgent({
 
 ```ts
 // runner.ts
-import { connectToAgent, discoverAgents } from '@zeeshan8281/transport';
-import { createRegistryClient } from '@zeeshan8281/registry';
+import { connectToAgent, discoverAgents, createRegistryClient } from '@zeeshan8281/meshkit';
 
 // Discover all available agents
 const registry = createRegistryClient('http://localhost:4200');
@@ -225,8 +214,7 @@ Review: [Code review with bugs found, security issues, suggestions]
 Any MCP server works as a tool provider:
 
 ```ts
-import { defineAgent } from '@zeeshan8281/meshkit';
-import { mcp } from '@zeeshan8281/mcp';
+import { defineAgent, mcp } from '@zeeshan8281/meshkit';
 
 const researcher = defineAgent({
   name: 'researcher',

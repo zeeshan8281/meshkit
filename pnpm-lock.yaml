@@ -17,6 +17,9 @@ importers:
 
   examples/distributed:
     dependencies:
+      '@zeeshan8281/meshkit':
+        specifier: workspace:*
+        version: link:../../packages/meshkit
       '@zeeshan8281/registry':
         specifier: workspace:*
         version: link:../../packages/registry
@@ -26,9 +29,6 @@ importers:
       dotenv:
         specifier: ^16.4.0
         version: 16.6.1
-      meshkit:
-        specifier: workspace:*
-        version: link:../../packages/meshkit
     devDependencies:
       '@types/node':
         specifier: ^22.10.0
@@ -45,12 +45,12 @@ importers:
       '@zeeshan8281/mcp':
         specifier: workspace:*
         version: link:../../packages/mcp
+      '@zeeshan8281/meshkit':
+        specifier: workspace:*
+        version: link:../../packages/meshkit
       dotenv:
         specifier: ^16.4.0
         version: 16.6.1
-      meshkit:
-        specifier: workspace:*
-        version: link:../../packages/meshkit
     devDependencies:
       '@types/node':
         specifier: ^22.10.0
@@ -109,11 +109,14 @@ importers:
         specifier: ^0.39.0
         version: 0.39.0
       '@zeeshan8281/mcp':
-        specifier: workspace:*
-        version: link:../mcp
-      '@zeeshan8281/providers':
-        specifier: workspace:*
-        version: link:../providers
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@zeeshan8281/registry':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@zeeshan8281/transport':
+        specifier: ^0.1.0
+        version: 0.1.0
       openai:
         specifier: ^4.77.0
         version: 4.104.0(zod@3.25.76)
@@ -184,8 +187,8 @@ importers:
         specifier: ^1.13.0
         version: 1.19.14(hono@4.12.15)
       '@zeeshan8281/registry':
-        specifier: workspace:*
-        version: link:../registry
+        specifier: ^0.1.0
+        version: 0.1.0
       hono:
         specifier: ^4.6.0
         version: 4.12.15
@@ -683,6 +686,17 @@ packages:
 
   '@vitest/utils@2.1.9':
     resolution: {integrity: sha512-v0psaMSkNJ3A2NMrUEHFRzJtDPFn+/VWZ5WxImB21T9fjucJRmS7xCS3ppEnARb9y11OAzaD+P2Ps+b+BGX5iQ==}
+
+  '@zeeshan8281/mcp@0.1.0':
+    resolution: {integrity: sha512-FJewWDaSYfY3OFZSgy8sJW4MbZsBxROmWehluhR0UfVojKPji6DJze4bIj8jQxx9ggaRSyOXF4CWRtZ1zvodsg==}
+    engines: {node: '>=20'}
+
+  '@zeeshan8281/registry@0.1.0':
+    resolution: {integrity: sha512-wkd/PjfCm5dRXxmQ4TCstJuaMmG0LVv/mVQ8eToMVVS+cCYN7ZvVUaePndczbMoGCs4SgFcWiZWdSIwm8Kc7hA==}
+    hasBin: true
+
+  '@zeeshan8281/transport@0.1.0':
+    resolution: {integrity: sha512-iDaqedZF4sdR1J3eIz4rEWry/8B4xEyh5usT1x8OojysreTJ8dR7Cv8lFe6MTCPDTsQ1dBlbATTdUVtsccMXfQ==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -1662,6 +1676,25 @@ snapshots:
       '@vitest/pretty-format': 2.1.9
       loupe: 3.2.1
       tinyrainbow: 1.2.0
+
+  '@zeeshan8281/mcp@0.1.0':
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.29.0(zod@3.25.76)
+      zod: 3.25.76
+    transitivePeerDependencies:
+      - '@cfworker/json-schema'
+      - supports-color
+
+  '@zeeshan8281/registry@0.1.0':
+    dependencies:
+      '@hono/node-server': 1.19.14(hono@4.12.15)
+      hono: 4.12.15
+
+  '@zeeshan8281/transport@0.1.0':
+    dependencies:
+      '@hono/node-server': 1.19.14(hono@4.12.15)
+      '@zeeshan8281/registry': 0.1.0
+      hono: 4.12.15
 
   abort-controller@3.0.0:
     dependencies:

@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import { connectToAgent, discoverAgents } from '@meshkit/transport';
-import { createRegistryClient } from '@meshkit/registry';
+import { connectToAgent, discoverAgents } from '@zeeshan8281/transport';
+import { createRegistryClient } from '@zeeshan8281/registry';
 
 async function main() {
   const registry = createRegistryClient();

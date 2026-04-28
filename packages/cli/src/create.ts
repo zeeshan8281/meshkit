@@ -61,7 +61,7 @@ export async function createApp(name: string, options: CreateOptions): Promise<v
     },
     dependencies: {
       meshkit: '^0.1.0',
-      '@meshkit/mcp': '^0.1.0',
+      '@zeeshan8281/mcp': '^0.1.0',
     },
     devDependencies: {
       '@types/node': '^22.10.0',
@@ -180,7 +180,7 @@ Focus on the most impactful improvements.`,
 
   const systemPrompt = prompts[template]?.[name] ?? `You are a ${name} agent.`;
 
-  return `import { defineAgent } from 'meshkit';
+  return `import { defineAgent } from '@zeeshan8281/meshkit';
 
 export const ${name} = defineAgent({
   name: '${name}',
@@ -199,7 +199,7 @@ function generateIndexCode(agents: string[], template: string): string {
     ? 'Run the assistant directly'
     : 'Create the mesh with hub-and-spoke topology';
 
-  return `import { createMesh, hubAndSpoke, createOrchestratorAgent, trace } from 'meshkit';
+  return `import { createMesh, hubAndSpoke, createOrchestratorAgent, trace } from '@zeeshan8281/meshkit';
 ${imports}
 
 // Enable tracing

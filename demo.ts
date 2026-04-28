@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { defineAgent, createMesh, hubAndSpoke, createOrchestratorAgent, trace } from './packages/meshkit/src/index.js';
+import { defineAgent, createMesh, hubAndSpoke, createOrchestratorAgent, trace } from '@zeeshan8281/meshkit/src/index.js';
 
 const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
 

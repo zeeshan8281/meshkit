@@ -1,5 +1,5 @@
 {
-  "name": "@meshkit/providers",
+  "name": "@zeeshan8281/providers",
   "version": "0.1.0",
   "description": "LLM provider integrations for meshkit",
   "type": "module",

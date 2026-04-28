@@ -17,10 +17,10 @@ importers:
 
   examples/distributed:
     dependencies:
-      '@meshkit/registry':
+      '@zeeshan8281/registry':
         specifier: workspace:*
         version: link:../../packages/registry
-      '@meshkit/transport':
+      '@zeeshan8281/transport':
         specifier: workspace:*
         version: link:../../packages/transport
       dotenv:
@@ -42,7 +42,7 @@ importers:
 
   examples/research-bot:
     dependencies:
-      '@meshkit/mcp':
+      '@zeeshan8281/mcp':
         specifier: workspace:*
         version: link:../../packages/mcp
       dotenv:
@@ -108,10 +108,10 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.39.0
         version: 0.39.0
-      '@meshkit/mcp':
+      '@zeeshan8281/mcp':
         specifier: workspace:*
         version: link:../mcp
-      '@meshkit/providers':
+      '@zeeshan8281/providers':
         specifier: workspace:*
         version: link:../providers
       openai:
@@ -183,7 +183,7 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.0
         version: 1.19.14(hono@4.12.15)
-      '@meshkit/registry':
+      '@zeeshan8281/registry':
         specifier: workspace:*
         version: link:../registry
       hono:

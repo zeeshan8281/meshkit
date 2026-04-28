@@ -1,5 +1,5 @@
 {
-  "name": "@meshkit/transport",
+  "name": "@zeeshan8281/transport",
   "version": "0.1.0",
   "description": "HTTP transport for distributed meshkit agents",
   "type": "module",
@@ -12,7 +12,7 @@
   "dependencies": {
     "hono": "^4.6.0",
     "@hono/node-server": "^1.13.0",
-    "@meshkit/registry": "^0.1.0"
+    "@zeeshan8281/registry": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

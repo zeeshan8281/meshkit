@@ -11,9 +11,9 @@
     "demo": "echo 'Run in separate terminals:\\n  pnpm registry\\n  pnpm coder\\n  pnpm reviewer\\n  pnpm runner \"your task\"'"
   },
   "dependencies": {
-    "meshkit": "workspace:*",
-    "@meshkit/registry": "workspace:*",
-    "@meshkit/transport": "workspace:*",
+    "@zeeshan8281/meshkit": "workspace:*",
+    "@zeeshan8281/registry": "workspace:*",
+    "@zeeshan8281/transport": "workspace:*",
     "dotenv": "^16.4.0"
   },
   "devDependencies": {

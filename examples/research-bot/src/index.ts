@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { createMesh, hubAndSpoke, createOrchestratorAgent, trace } from 'meshkit';
+import { createMesh, hubAndSpoke, createOrchestratorAgent, trace } from '@zeeshan8281/meshkit';
 import { researcher } from './agents/researcher.js';
 import { writer } from './agents/writer.js';
 import { critic } from './agents/critic.js';

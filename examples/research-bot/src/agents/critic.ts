@@ -1,4 +1,4 @@
-import { defineAgent } from 'meshkit';
+import { defineAgent } from '@zeeshan8281/meshkit';
 
 const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
 

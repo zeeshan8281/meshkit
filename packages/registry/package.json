@@ -1,5 +1,5 @@
 {
-  "name": "@meshkit/registry",
+  "name": "@zeeshan8281/registry",
   "version": "0.1.0",
   "description": "Distributed agent registry for meshkit",
   "type": "module",

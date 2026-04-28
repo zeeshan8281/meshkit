@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "meshkit": "workspace:*",
-    "@meshkit/mcp": "workspace:*",
+    "@zeeshan8281/meshkit": "workspace:*",
+    "@zeeshan8281/mcp": "workspace:*",
     "dotenv": "^16.4.0"
   },
   "devDependencies": {

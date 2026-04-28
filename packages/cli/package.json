@@ -1,5 +1,5 @@
 {
-  "name": "@meshkit/cli",
+  "name": "@zeeshan8281/cli",
   "version": "0.1.0",
   "description": "CLI for meshkit - create and manage agent meshes",
   "type": "module",

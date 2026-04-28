@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import { defineAgent } from 'meshkit';
-import { serveAgent } from '@meshkit/transport';
+import { defineAgent } from '@zeeshan8281/meshkit';
+import { serveAgent } from '@zeeshan8281/transport';
 
 const model = process.env.OPENROUTER_MODEL || 'anthropic/claude-sonnet-4';
 

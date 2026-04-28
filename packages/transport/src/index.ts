@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { serve } from '@hono/node-server';
-import { createRegistryClient, type InvokeRequest, type InvokeResponse } from '@meshkit/registry';
+import { createRegistryClient, type InvokeRequest, type InvokeResponse } from '@zeeshan8281/registry';
 
 export interface AgentHandler {
   name: string;

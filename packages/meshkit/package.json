@@ -1,5 +1,5 @@
 {
-  "name": "meshkit",
+  "name": "@zeeshan8281/meshkit",
   "version": "0.1.0",
   "description": "Multi-agent mesh SDK - define agents, wire topologies, trace everything",
   "type": "module",
@@ -41,14 +41,14 @@
     "vitest": "^2.1.0"
   },
   "peerDependencies": {
-    "@meshkit/mcp": "^0.1.0",
-    "@meshkit/providers": "^0.1.0"
+    "@zeeshan8281/mcp": "^0.1.0",
+    "@zeeshan8281/providers": "^0.1.0"
   },
   "peerDependenciesMeta": {
-    "@meshkit/mcp": {
+    "@zeeshan8281/mcp": {
       "optional": true
     },
-    "@meshkit/providers": {
+    "@zeeshan8281/providers": {
       "optional": true
     }
   },
@@ -58,5 +58,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zeeshan8281/meshkit.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
